@@ -113,16 +113,17 @@
 
 
 
-<meta name="description" content="可爱的小毒蛇">
-<meta property="og:type" content="website">
-<meta property="og:title" content="安晓凯的博客">
-<meta property="og:url" content="https://anxiaok.coding.me/myblog/index.html">
+<meta name="description" content="Javascript基础： &amp;amp;&amp;amp;运算时与运算，只有所有都为true,&amp;amp;&amp;amp;运算结果才是true; ||运算时或运算，只要其中一个是true,||运算结果就是true;  特别注意相等运算符=:  ==会自动转换为数据类型再比较; ===它不会自动转换为数据类型，如果数据类型不一致，返回false。如果一致，再比较。 所以不要使用==比较，始终坚持使用===比较。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript技术每日分享">
+<meta property="og:url" content="https://anxiaok.coding.me/myblog/2017/08/05/javascript技术每日分享/index.html">
 <meta property="og:site_name" content="安晓凯的博客">
-<meta property="og:description" content="可爱的小毒蛇">
+<meta property="og:description" content="Javascript基础： &amp;amp;&amp;amp;运算时与运算，只有所有都为true,&amp;amp;&amp;amp;运算结果才是true; ||运算时或运算，只要其中一个是true,||运算结果就是true;  特别注意相等运算符=:  ==会自动转换为数据类型再比较; ===它不会自动转换为数据类型，如果数据类型不一致，返回false。如果一致，再比较。 所以不要使用==比较，始终坚持使用===比较。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-05T16:35:39.775Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="安晓凯的博客">
-<meta name="twitter:description" content="可爱的小毒蛇">
+<meta name="twitter:title" content="javascript技术每日分享">
+<meta name="twitter:description" content="Javascript基础： &amp;amp;&amp;amp;运算时与运算，只有所有都为true,&amp;amp;&amp;amp;运算结果才是true; ||运算时或运算，只要其中一个是true,||运算结果就是true;  特别注意相等运算符=:  ==会自动转换为数据类型再比较; ===它不会自动转换为数据类型，如果数据类型不一致，返回false。如果一致，再比较。 所以不要使用==比较，始终坚持使用===比较。">
 
 
 
@@ -150,13 +151,13 @@
 
 
 
-  <link rel="canonical" href="https://anxiaok.coding.me/myblog/"/>
+  <link rel="canonical" href="https://anxiaok.coding.me/myblog/2017/08/05/javascript技术每日分享/"/>
 
 
 
 
 
-  <title>安晓凯的博客</title>
+  <title>javascript技术每日分享 | 安晓凯的博客</title>
   
 
 
@@ -194,9 +195,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 <a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -289,9 +288,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -317,9 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/05/javascript技术每日分享/" itemprop="url">javascript技术每日分享</a></h1>
+          <h1 class="post-title" itemprop="name headline">javascript技术每日分享</h1>
         
 
         <div class="post-meta">
@@ -366,39 +363,106 @@
       
 
       
-        
-          
-          Javascript基础：
-&amp;&amp;运算时与运算，只有所有都为true,&amp;&amp;运算结果才是true;
-||运算时或运算，只要其中一个是true,||运算结果就是true;
+        <h2 id="Javascript基础："><a href="#Javascript基础：" class="headerlink" title="Javascript基础："></a>Javascript基础：</h2><ul>
+<li><code>&amp;&amp;</code>运算时与运算，只有所有都为<code>true</code>,<code>&amp;&amp;</code>运算结果才是<code>true</code>;</li>
+<li><p><code>||</code>运算时或运算，只要其中一个是<code>true</code>,<code>||</code>运算结果就是<code>true</code>;</p>
+</li>
+<li><p>特别注意相等运算符<code>=</code>:</p>
+<ol>
+<li><code>==</code>会自动转换为数据类型再比较;</li>
+<li><code>===</code>它不会自动转换为数据类型，如果数据类型不一致，返回<code>false</code>。如果一致，再比较。<blockquote>
+<p>所以不要使用<code>==</code>比较，始终坚持使用<code>===</code>比较。</p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li>判断<ol>
+<li>判断NaN的方法通过<code>isNaN()</code>函数；比如：<code>isNaN(NaN)</code>;</li>
+<li>比较两个浮点数是否相等，只能计算它们之差的绝对值，看是否小于某个范围值：<code>Math.abs(1/3-(1-2/3))&lt;0.0000001;//true</code>;</li>
+<li>null和undefined:<ul>
+<li>null表示一个空的值，它和0以及空字符串不同，0是一个数值，空字符串表示长度为0的字符串，而null表示为空</li>
+<li>null表示一个空的值，undefined表示未定义；大多数情况下我们都应该用null。undefined仅仅在判断函数参数是否传递的情况下有用。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>数组</p>
+<ol>
+<li>创建数组：<code>new Array(1,2,3)</code>or <code>[]</code>;索引起始值为0；</li>
+<li>启用strict模式,<code>use strict</code></li>
+<li>取得数组的长度：arr.length;<ul>
+<li>直接给length赋值，会导致Array大小的变化；<br><br>比如:<br><br>  var arr = [1,2,3];<br><br>  arr.length;//3;<br><br>  arr.length = 6;<br><br>  arr;//[1,2,3,undefined,undefined,undefined]<br><br>  arr.length = 2;<br><br>  arr;//arr变为[1,2];</li>
+<li>对数组的索引进行赋值会直接修改为这个Array；</li>
+</ul>
+</li>
+<li>方法：<br><ul>
+<li>indexOf();指定元素的位置</li>
+<li>slice();对应string的subString()版本；<br><br>比如：<br><br>var arr = [‘A’,’B’,’C’,’D’,’E’];<br><br>arr.slice(0,3);//从0开始到索引3（不包括3）结束<br><br>arr.slice(3);<br></li>
+<li>push()和pop();<br><br>push 是向数组的末尾添加若干元素，pop是把数组的最后一个元素删掉</li>
+<li>unshift()和shift();<br><br>unshift是往数组的头部添加若干元素，shift是把数组的第一个元素删掉</li>
+<li>sort();排序，会修改元素的默认顺序；</li>
+<li>reverse();把数组进行反转，都掉个个；</li>
+<li>splice();它是修改数组的万能方法；<br><br>var arr = [0,1,2,3,4,5];<br><br>arr.splice(2,3,6,7);//从索引2开始删除3个元素，然后在索引2和3的位置添加两个元素，6和7；[0,1,6,7,5]<br><br>arr.splice(2,2);//只删除，不添加；[0,1,4,5]<br><br>arr.splice(2,0,’6’,’7’);//只添加不删除；[0,1,6,7,2,3,4,5]</li>
+<li>concat();连接两个不同的数组，返回一个新的数组；<br><br>注意：它并没有修改当前array；</li>
+<li>join();把数组变成字符串，用特殊字符串连接；arr.join(‘-‘);</li>
+<li></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>字符串</p>
+<ol>
+<li>ASCII字符可以以<code>\x##</code>表示十六进制，<code>\u####</code>表示一个Unicode字符，比如\x41 =&gt; A ，\u4e2d\u6587 =&gt;中文</li>
+<li>多行字符串：<ul>
+<li>var name =’小明’；<br><br>var age = ‘20；<br><br>var message = `你好，${name},你今年${age}岁了！`；</li>
+<li>注意：它有length属性，但是对字符串的某个索引赋值，是没有任何效果的，也不会报错；<br><br>toUpperCase();把字符串变成小写；<br><br>toLowerCase();把字符串变成大写；<br><br>indexOf();指定字符串出现的位置；<br><br>subString();返回指定索引区间的子串，比如：<br><br>var s = “hello,world”;<br><br>s.subString(0,5);//从索引0到5（不包括5）,返回’hello’<br><br>s.subString(7);//从索引7开始到结束，返回’world’</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>对象<ol>
+<li>如果属性名包含特殊的字符，就必须用<code>&#39;&#39;</code>括起来；返回不存在的属性不会报错，而是返回undefined；</li>
+<li>可以自由的给对象添加属性或者删除属性；<code>delete xiaoming.age</code>;<br><br>检测对象是否有某一属性，可以用in操作符；<code>&#39;name&#39; in xiaoming</code>;<br><br>注意:如果in判断一个属性存在，这个属性不一定是xiaoming的，塔可能是集成得到的；<br>要判断是否是xiaoming自身拥有的，而不是继承得到的，用<code>hasOwnProperty()</code>;</li>
+</ol>
+</li>
+<li>循环<ol>
+<li>for循环如果没有退出循环的条件，就必须使用break语句退出循环；</li>
+<li>for…in…循环，可以把对象的所有属性都依次循环出来；<br>要过滤掉对象继承的属性，可以用<code>hasOwnProperty()</code>来实现；<br>比如：<br><br> var o = {<br><br> &nbsp;&nbsp;&nbsp;&nbsp;name:’anan’,<br><br> &nbsp;&nbsp;&nbsp;&nbsp;age:20,<br><br> &nbsp;&nbsp;&nbsp;&nbsp;city:’beijing’    <br><br>  };<br><br>  for (var key in o){<br><br>  &nbsp;&nbsp;&nbsp;&nbsp;if(o.hasOwnProperty(key)){<br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(key);<br><br> &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>  }</li>
+</ol>
+</li>
+<li>Map和Set；<br><br>var m = new Map([[‘anna’,95],[‘Bob’,80],[‘Trancy’,90]]);<br><br>m.get(‘anna’);/95<br><br><br><br>var m = new Map();<br>m.set(‘anna’,90);m.set(‘nana’,80);m.set(‘adam’,60);<br><br>m.get(‘adam’);//60<br><br>m.delete(‘adam’);<br><br>m.get(adam);//undefined;<br><br><br><br>var s = new Set([1,2,3,3,4]);s;//Set{1,2,3,4}<br><br>s.add(4);s.add(4);s;//重复添加，还是没有任何的变化；<br><br>s.delete(3);s;//Set{1,2,4};</li>
+<li>iterable类型，Array,Map,Set都属于iterable类型；<br>具有iterable类型的集合可以通过新的for…of…循环来遍历；它只循环集合本身的元素；<br><br>方法：forEach();<br><br>var s = new Set([‘A’,’B’,’C’]);<br><br>s.forEach(function(element,sameElement,set){<br><br>&nbsp;&nbsp;&nbsp;&nbsp;alert(element);<br><br>});<br><br>注意：Set和Array类似，但Set没有索引，因此回调函数的前两个参数都是元素本身；<br><br>map的回调函数参数依次为value，key和map本身；<br><br>var m = new Map([[1,’x’],[2,’y’],[3,’z’]]);<br><br>m.forEach(function(value,key,map){<br><br>&nbsp;&nbsp;&nbsp;&nbsp;alert(value);<br><br>});<br><br>由于JavaScript的函数调用不要求参数必须一致，因此可以忽略它们；<br><br>var a = [‘A’,’B’,’C’];<br><br>a.forEach(function(element){<br><br> &nbsp;&nbsp;&nbsp;&nbsp;alert(element);<br><br>});<br></li>
+</ul>
 
-特别注意相等运算符=:
-
-==会自动转换为数据类型再比较;
-===它不会自动转换为数据类型，如果数据
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/05/javascript技术每日分享/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
 
     <div>
+      
+        
+
       
     </div>
 <div>
   
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+  
 </div>
     <div>
+      
+        
+
       
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
@@ -406,21 +470,22 @@
       
 
       
+      
+      
 
       
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -428,6 +493,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -448,8 +517,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/favicon.jpg"
@@ -500,6 +578,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Javascript基础："><span class="nav-number">1.</span> <span class="nav-text">Javascript基础：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -640,10 +734,10 @@
 
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
