@@ -120,7 +120,7 @@
 <meta property="og:site_name" content="安晓凯的博客">
 <meta property="og:description" content="函数 arguments,它指向当前函数调用者的所有参数。 rest参数:function foo(a,b,…rest){&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;console.log(a);&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;console.log(b);&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;console.log(rest);}foo(1,2,3,4,5);//">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-06T13:24:57.177Z">
+<meta property="og:updated_time" content="2017-08-06T16:37:16.223Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript-函数">
 <meta name="twitter:description" content="函数 arguments,它指向当前函数调用者的所有参数。 rest参数:function foo(a,b,…rest){&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;console.log(a);&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;console.log(b);&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;console.log(rest);}foo(1,2,3,4,5);//">
@@ -367,16 +367,13 @@
 <li><strong>函数</strong><ol>
 <li><strong>arguments</strong>,它指向当前函数调用者的所有参数。</li>
 <li><strong>rest参数:</strong><br><br>function foo(a,b,…rest){<br><br>&nbsp;&nbsp;&nbsp;&nbsp;console.log(a);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;console.log(b);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;console.log(rest);<br><br>}<br><br>foo(1,2,3,4,5);//1;2;[3,4,5];</li>
-<li><strong>重点：</strong><br><pre><code>内部函数可以访问外部函数定义的变量，反之则不行；函数在查找自身定义开始，就是**从内向外**查找；它会把所有申明的变量提升到函数顶部；在函数内部首先申明所有变量；减少冲突的一个方法是把自己多有的变量和函数全部绑定到一个全局变量中。比如：定义一个全局变量：var MYAPP = {}；
-</code></pre></li>
+<li><strong>重点：</strong><br><br>内部函数可以访问外部函数定义的变量，反之则不行；函数在查找自身定义开始，就是<strong>从内向外</strong>查找；它会把所有申明的变量提升到函数顶部；在函数内部首先申明所有变量；减少冲突的一个方法是把自己多有的变量和函数全部绑定到一个全局变量中。比如：定义一个全局变量：var MYAPP = {}；</li>
 <li><strong>局部作用域:</strong>在for循环等语句块中是无法定义局部作用域的变量的。用let替代var可以申明一个块级作用域的变量。const定义一个常量，与let都具有块级作用域。</li>
 <li>绑定到对象上的函数称为<strong>方法</strong>，<ul>
 <li><strong>this:</strong>它指向当前对象，var fn = xiaoming.age;fn();//NaN</li>
 <li>ECMA决定，在strict模式下，会得到一个一个错误，<strong>undefined;</strong></li>
 <li>所以用var that = this;在函数内部一开始就捕获this；</li>
-<li><strong>apply和call方法：</strong><br><br><strong>apply方法：</strong>接受两个参数，第一个参数是需要绑定的this变量，第二个参数是Array，表示函数本身的参数。它是把参数打包成Array再传入。<br><br><strong>call方法：</strong>是参数按照顺序传入。<br><br>Math.max.apply(null,[2,5,4]);//5<br><br>Math.max.call(null,2,5,4);//5<br><br>比如：<br><br><strong>装饰器：</strong><br><br>**var count = 0;<br><br>var oldParseInt = parseInt;<br><br>window.parseInt = function(){<br><pre><code>count += 1;&lt;br /&gt;
-return oldParseInt.apply(null,arguments);&lt;br /&gt;
-</code></pre>}<br><br>parseInt(‘10’);<br><br>parseInt(‘20’);<br><br>parseInt(‘30’);<br><br>count;//3**</li>
+<li><strong>apply和call方法：</strong><br><br><strong>apply方法：</strong>接受两个参数，第一个参数是需要绑定的this变量，第二个参数是Array，表示函数本身的参数。它是把参数打包成Array再传入。<br><br><strong>call方法：</strong>是参数按照顺序传入。<br><br>Math.max.apply(null,[2,5,4]);//5<br><br>Math.max.call(null,2,5,4);//5<br><br>比如：<br><br><strong>装饰器：</strong><br><br><strong>var count = 0;<br><br>var oldParseInt = parseInt;<br><br>window.parseInt = function(){<br><br>count += 1;<br><br>return oldParseInt.apply(null,arguments);<br><br>}<br><br>parseInt(‘10’);<br><br>parseInt(‘20’);<br><br>parseInt(‘30’);<br><br>count;//3</strong></li>
 </ul>
 </li>
 </ol>
