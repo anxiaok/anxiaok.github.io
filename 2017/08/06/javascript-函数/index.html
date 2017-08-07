@@ -120,7 +120,7 @@
 <meta property="og:site_name" content="安晓凯的博客">
 <meta property="og:description" content="函数 arguments,它指向当前函数调用者的所有参数。 rest参数:function foo(a,b,…rest){&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;console.log(a);&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;console.log(b);&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;console.log(rest);}foo(1,2,3,4,5);//">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-06T16:38:45.689Z">
+<meta property="og:updated_time" content="2017-08-07T14:19:46.339Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript-函数">
 <meta name="twitter:description" content="函数 arguments,它指向当前函数调用者的所有参数。 rest参数:function foo(a,b,…rest){&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;console.log(a);&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;console.log(b);&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;console.log(rest);}foo(1,2,3,4,5);//">
@@ -379,7 +379,82 @@
 </ol>
 </li>
 <li><strong>高阶函数：</strong>一个函数可以接受另一个函数作为参数.<br>比如：<br><br>function add(x,y,f){<br><br>   return f(x)+f(y); <br><br>}</li>
-<li>map:它定义在JavaScript的Array中，</li>
+<li><strong>map():</strong>它定义在JavaScript的Array中，arr.map(自己的函数);<br>比如：<br><br>  function pow(x){<br><pre><code>return x*x;   
+</code></pre>  }<br><br>  var arr = [1,2,3,4,5];<br><br>  arr.map(pow);//[2,4,9,16,25]<br><ul>
+<li>把Array的所有数字都转为字符串：<br><br>var arr = [1,2,3,4,5];<br><br>arr.map(String);//[‘1’,’2’,’3’,’4’,’5’]<br></li>
+</ul>
+</li>
+<li><strong>reduce();</strong>它必须接受两个参数，它把结果继续和序列的下一个元素做累积计算。效果是：[x1,x2,x3].reduce(f) = f(f(x1,x2),x3);</li>
+<li><strong>filter():</strong>把数组的某些元素过滤掉，然后返回剩下的元素。<br> 比如：<br><br>  var arr = [1,2,3,4,5];<br><br>  var r = arr.filter(function(x){<br><pre><code>return x%2 !=0;
+</code></pre>  });<br><br>  r;//[1,3,5]<br><br>  <br><br>  1, 去掉数组中的空字符串：<br>  var arr = [‘A’,’B’,null,undefined,’C’,’’];<br><br>  var r = arr.filter(function(s){<br><pre><code>return s &amp;&amp; s.tirm();
+</code></pre>  });<br><br>  r;//[‘A’,’B’,’C’]<br><br><strong>注意：</strong>它接收的回调函数可以有多个参数，分别是：每一个元素，元素的位置和元素本身；</li>
+<li><strong>sort();</strong><br>比如：<br><br>  var arr = [10,20,1,2];<br><br>  arr.sort(function(x,y){<br><pre><code>if(x&lt;y){
+   return -1;    
+}&lt;br /&gt;
+ if(x &gt; y){
+   return 1;
+ }
+ return 0；
+</code></pre>  });//[1,2,10,20]<br><br> <br><br>对字符串排序，就是把字符串变成大写或者小写进行比较。<br><br>  var arr = [‘Goold’,’Microsoft’,’apple’];<br><br>  arr.sort(function(s1,s2){<br><pre><code>x1 = s1.toUpperCase();
+x2 = s2.toUpperCase();
+if(x1&gt;x2){
+  return 1;
+}&lt;br /&gt;
+if(x1&lt;x2){
+  return -1;
+}
+return 0;
+</code></pre>  });//[‘apple’,’Goold’,’Microsoft’]<br><br><strong>sort()方法直接对数组进行修改，所以结果仍然是当前Array</strong></li>
+<li><p><strong>闭包：</strong>函数中定义了函数，，并且内部函数可以引用外部函数的参数和局部变量，当外部函数返回内部函数时，相关参数和变量都保存在返回的函数中，这种称为闭包。</p>
+<pre><code>function count(){
+     var arr = [];
+     for(var i=1;i&lt;=3;i++){
+         arr.push(function(){
+             return i*i;
+         });
+     }
+     return arr;
+ }
+ var results = count();
+ var f1 = results[0];
+ var f2 = results[1];
+ var f3 = results[2];
+ f1();//16
+ f2();//16
+ f3();//16
+</code></pre><p>解析：返回的函数引用了变量i,但是并非立即执行；i=4;</p>
+<pre><code>function count(){
+    var arr = [];
+    for(var i=1;i&lt;=3;i++){
+        arr.push((function(n){
+            return n*n;
+        })(i));
+    }
+    return arr;
+}
+var results = count();
+var f1 = results[0];
+var f2 = results[1];
+var f3 = results[2];
+alert(f1());
+</code></pre><p><strong>注意：</strong><br>  返回函数不要引用任何循环变量，或者后续会发生的变量。<br><br>  利用闭包创建x的平方。</p>
+<p>  function make_pow(n){<br></p>
+<pre><code>return function(x){
+  return Math.pow(x,n);
+}
+</code></pre><p>  }<br>  var pow2 = make_pow(2);<br><br>  var pow3 = make_pow(3);<br><br>  pow2(5); //25<br><br>  pow3(5); //125<br></p>
+</li>
+<li><strong>箭头函数</strong><br><br>  x =&gt; x*x;<br><br>  x =&gt; {<br><pre><code>if(x&gt;0){
+    return x*x;
+}else{
+    return -x*x;
+}
+</code></pre>  }<br>  (x,y) =&gt; x<em>x+y</em>y;<br><br>  (x,y,…rest) =&gt; {<br><pre><code>var i,sum = x+y;
+for(i=0;i&lt;rest.length;i++){
+    sum+=rest[i];
+}
+return sum;
+</code></pre>  }<br><br>  x =&gt; ({foo:x});<br></li>
 </ul>
 
       
