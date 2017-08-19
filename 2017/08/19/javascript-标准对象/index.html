@@ -113,16 +113,17 @@
 
 
 
-<meta name="description" content="可爱的小毒蛇">
-<meta property="og:type" content="website">
-<meta property="og:title" content="安晓凯的博客">
-<meta property="og:url" content="https://anxiaok.coding.me/myblog/index.html">
+<meta name="description" content="typeof操作符 typeof 123; //&amp;apos;number&amp;apos; typeof NaN; //&amp;apos;number&amp;apos; typeof &amp;apos;str&amp;apos;; //&amp;apos;string&amp;apos; typeof true; //&amp;apos;boolean&amp;apos; typeof undefined; //&amp;apos;undefined&amp;apos; t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript-标准对象">
+<meta property="og:url" content="https://anxiaok.coding.me/myblog/2017/08/19/javascript-标准对象/index.html">
 <meta property="og:site_name" content="安晓凯的博客">
-<meta property="og:description" content="可爱的小毒蛇">
+<meta property="og:description" content="typeof操作符 typeof 123; //&amp;apos;number&amp;apos; typeof NaN; //&amp;apos;number&amp;apos; typeof &amp;apos;str&amp;apos;; //&amp;apos;string&amp;apos; typeof true; //&amp;apos;boolean&amp;apos; typeof undefined; //&amp;apos;undefined&amp;apos; t">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-19T15:56:02.201Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="安晓凯的博客">
-<meta name="twitter:description" content="可爱的小毒蛇">
+<meta name="twitter:title" content="javascript-标准对象">
+<meta name="twitter:description" content="typeof操作符 typeof 123; //&amp;apos;number&amp;apos; typeof NaN; //&amp;apos;number&amp;apos; typeof &amp;apos;str&amp;apos;; //&amp;apos;string&amp;apos; typeof true; //&amp;apos;boolean&amp;apos; typeof undefined; //&amp;apos;undefined&amp;apos; t">
 
 
 
@@ -150,13 +151,13 @@
 
 
 
-  <link rel="canonical" href="https://anxiaok.coding.me/myblog/"/>
+  <link rel="canonical" href="https://anxiaok.coding.me/myblog/2017/08/19/javascript-标准对象/"/>
 
 
 
 
 
-  <title>安晓凯的博客</title>
+  <title>javascript-标准对象 | 安晓凯的博客</title>
   
 
 
@@ -194,9 +195,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 <a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -289,9 +288,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -317,9 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/19/javascript-标准对象/" itemprop="url">javascript-标准对象</a></h1>
+          <h1 class="post-title" itemprop="name headline">javascript-标准对象</h1>
         
 
         <div class="post-meta">
@@ -366,37 +363,136 @@
       
 
       
-        
-          
-          
-typeof操作符
-typeof 123; //&apos;number&apos;
+        <ul>
+<li><p><code>typeof</code>操作符</p>
+<pre><code>typeof 123; //&apos;number&apos;
 typeof NaN; //&apos;number&apos;
 typeof &apos;str&apos;; //&apos;string&apos;
-typeof true; //&apos;boolean
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/19/javascript-标准对象/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+typeof true; //&apos;boolean&apos;
+typeof undefined; //&apos;undefined&apos;
+typeof Math.abs; //&apos;function&apos;
+typeof null; //&apos;object&apos;
+typeof []; //&apos;object&apos;
+typeof {}; //&apos;object&apos;
+</code></pre></li>
+<li>包装对象（用new 创建）：类型会都变成<code>object</code>；不写new就会被当做普通函数，比如：<code>Number()</code>,<code>Boolean()</code>,<code>String()</code>;<ul>
+<li>注意：<ol>
+<li>不要使用<code>new Number()</code>、<code>new Boolean()</code>、<code>new String()</code>创建包装对象；</li>
+<li>用parseInt()或parseFloat()来转换任意类型到number；</li>
+<li>转string用对象的<code>toString()</code>方法；</li>
+<li><code>typeof</code>可以判断出number,boolean,string,function.undefined;</li>
+<li>判断Array要使用Array.isArray(arr);</li>
+<li>判断null使用<code>myVar === null</code></li>
+<li>判断某个全局变量是否存在<code>typeof myVar === &#39;undefined&#39;</code></li>
+<li>null和undefined没有toString()方法，number对象调用toString()要加括号；</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>Date对象</p>
+<pre><code> var now = new Date();
+ now.getFullYear();
+ now.getMonth();
+ now.getDate();
+ now.getDay(); //星期
+ now.getHours();
+ now.getMinutes();
+ now.getSeconds();
+ now.getMilliseconds(); //毫秒
+ now.getTime(); //以number形式表示的时间戳
+
+ var d = new Date(2017,8,19,21,08,123);
+ d; //Tue Sep 19 2017 21:10:03 GMT+0800(月份+1)
+ var d = Date.parse(&apos;Tue Sep 19 2017 21:10:03 GMT+0800&apos;);
+ d; //1505826603000
+
+* 显示本地时间和调整后的UTC时间
+
+     var d = new Date(1505826603000);
+     d.toLocaleString();
+     d.toUTCString();
+
+* 获取当前时间戳
+
+     if (Date.now) {
+         alert(Date.now()); // 老版本IE没有now()方法
+     } else {
+         alert(new Date().getTime());
+     }
+</code></pre></li>
+<li><p>RegExp</p>
+<pre><code>\d：数字
+\w:字母或数字
+.:可以匹配任意字符
+*：表示任意个字符（包括0个）
++：表示至少一个字符
+?:表示0个或1个字符
+{n}:表示n个字符
+{n,m}:表示n到m个字符
+[]:表示范围
+A|B:匹配A或B
+^：行的开头
+$:行的结束
+():表示的是分组
+?:采用的是非贪婪匹配
+g:全局匹配
+i:忽略大小写
+m:执行多行匹配
+字符串中的两个\\表示一个\
+</code></pre><ul>
+<li><p>方法</p>
+<ol>
+<li><p>test()；正则.test(str);</p>
+<pre><code>&apos;a,b,; c d&apos;.split(/[\s\,\;]/); //[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;]
+</code></pre><ol>
+<li>exec();正则.exec();提取子串，返回一个Array，分别表示，第一个元素表示整个字符串，后面的表示子串，匹配失败返回null;</li>
+<li><p>贪婪匹配</p>
+<p> var re = /^(\d+?)(0*)$/;<br> re.exec(‘102300’); //[‘102300’,’1023’,’00’]</p>
+</li>
+<li>全局匹配可以多次执行exec()方法来搜索一个匹配的字符串，指定g标志后，每次运行exec()，正则都会更新lastIndex属性，表示上次匹配到的最后索引</li>
+</ol>
+<p>var s = ‘JavaScript, VBScript, JScript and ECMAScript’;<br>var re=/[a-zA-Z]+Script/g;</p>
+<p>// 使用全局匹配:<br>re.exec(s); // [‘JavaScript’]<br>re.lastIndex; // 10</p>
+<p>re.exec(s); // [‘VBScript’]<br>re.lastIndex; // 20</p>
+<p>re.exec(s); // [‘JScript’]<br>re.lastIndex; // 29</p>
+<p>re.exec(s); // [‘ECMAScript’]<br>re.lastIndex; // 44</p>
+<p>re.exec(s); // null，直到结束仍没有匹配到</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+
       
     </div>
 
     <div>
+      
+        
+
       
     </div>
 <div>
   
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+  
 </div>
     <div>
+      
+        
+
       
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
@@ -404,278 +500,38 @@ typeof true; //&apos;boolean
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://anxiaok.coding.me/myblog/2017/08/06/javascript-函数/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="安晓凯">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/favicon.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安晓凯的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/06/javascript-函数/" itemprop="url">javascript-函数</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-06T10:31:22+08:00">
-                2017-08-06
-              </time>
+              <a href="/2017/08/06/javascript-函数/" rel="next" title="javascript-函数">
+                <i class="fa fa-chevron-left"></i> javascript-函数
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-          
-函数
-
-arguments,它指向当前函数调用者的所有参数。
-rest参数:
-function foo(a,b,...rest){
-    console.log(a);
-    console.log(b);
-    console.log(rest);
-}
-foo(1,2,3,4,5); //
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/06/javascript-函数/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-<div>
-  
-</div>
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://anxiaok.coding.me/myblog/2017/08/05/javascript技术每日分享/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="安晓凯">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/favicon.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安晓凯的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/05/javascript技术每日分享/" itemprop="url">Javascript-快速入门</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-05T22:19:40+08:00">
-                2017-08-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          Javascript基础：
-&amp;&amp;运算时与运算，只有所有都为true,&amp;&amp;运算结果才是true;
-||运算时或运算，只要其中一个是true,||运算结果就是true;
-
-特别注意相等运算符=:
-
-==会自动转换为数据类型再比较;
-===它不会自动转换为数据类型，如果数据
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/05/javascript技术每日分享/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-
-    <div>
-      
-    </div>
-<div>
-  
-</div>
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
@@ -683,6 +539,10 @@ foo(1,2,3,4,5); //
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -895,10 +755,10 @@ foo(1,2,3,4,5); //
 
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
