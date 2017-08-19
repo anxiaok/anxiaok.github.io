@@ -370,8 +370,15 @@
           
           
 函数
+
 arguments,它指向当前函数调用者的所有参数。
-rest参数:function foo(a,b,…rest){&nbsp;&nbsp;&nbsp;&nbsp;console.log(a);&nbsp;&nbsp;&nbsp;&nbsp;console.log(b);&nbsp;&nbs
+rest参数:
+function foo(a,b,...rest){
+    console.log(a);
+    console.log(b);
+    console.log(rest);
+}
+foo(1,2,3,4,5); //
           ...
           <!--noindex-->
           <div class="post-button text-center">
